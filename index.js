@@ -162,3 +162,27 @@ console.log("== student.name: ", student.name)
 
 var field = 'gpa'
 console.log("== student[field]: ", student[field])
+console.log("== student.gtFullName(): ", student.name)
+
+console.log("====================")
+console.log("== Student class")
+console.log("====================")
+
+function Student(firstName, lastName, gpa) {
+
+    this.lastName = lastName
+    this.firstName = firstName
+    this.gpa = gpa
+}
+
+//add things to the pototype for the function
+
+Student.prototype.getFullName = function() {
+    return this.firstName + " " + this.lastName
+}
+
+var s = new Student("Leia", "Ortogo", 4.0)
+var s2 = new Student("han", "solo", 4.0)
+
+console.log("== student: ", s.getFullName())
+console.log("== student 2: ", s2.getFullName())
